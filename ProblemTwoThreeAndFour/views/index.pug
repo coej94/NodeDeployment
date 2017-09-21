@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  p Welcome #{username}
+  p
+    a(href="api/joke/random") Show random joke
+  p  
+    a(href="api/jokes") Show all jokes 
+  p
+    a(href="/addJoke") Add new joke
