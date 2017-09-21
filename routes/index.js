@@ -3,8 +3,11 @@ var router = express.Router();
 var {allJokes, getRandomJoke, addJoke} = require('../model/jokes');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {'username': req.session.userName});
-});
+  res.render('index', {'username': req.session.userName,
+                      'jokeCount': req.session.jokeCount,
+                      'jokesCount': req.session.jokesCount,
+                      'storeJokeCount': req.session.storeJokeCount});
+                      });
 
 router.get('/api/joke/random', (req, res, next) => {
   
